@@ -4,9 +4,9 @@ const Recipe = (props) => {
     return (
         <div>
             <h1>{props.title}</h1>
-
-                <img src={props.image}/>
-
+                <Link to={"/detail"}>
+                    <img src={props.image}/>
+                </Link>
             <ol>
                 {props.ingredients.map(ingredient =>(
                     <li>{ingredient.text}</li>
