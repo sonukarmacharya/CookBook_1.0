@@ -1,38 +1,202 @@
-.App {
-  text-align: center;
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+	font-family: sans-serif;
+}
+a{
+	text-decoration: none;
+	cursor: pointer;
+	color: inherit;
+}
+.slider{
+	z-index: -1;
+	height: 80vh;
+	background:url('./images/1.jpg');
+	/*background-blend-mode:darken;*/
+	background-repeat: no-repeat;
+	background-size: 100%;
+	filter: contrast(70%);
+	animation:slide 12s linear infinite;
+}
+.slider .slider-text{
+	height: 80vh;
+	display: flex;
+	justify-content:center;
+	text-align: left;
+	flex-direction: column;
+	z-index:1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes slide{
+	25%{
+		background: url('./images/1.jpg');
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	55%{
+		background: url('./images/3.jpg');
+		background-repeat: no-repeat;
+	background-size: 100%;
+	}
+	100%{
+		background: url('./images/4.jpg');
+		background-repeat: no-repeat;
+	background-size: 100%;
+	}
+}
+nav{
+	display:flex;
+	justify-content: flex-start;
+	align-items:center;
+	height: 15vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo{
+      padding:3vw;
+      box-sizing: border-box;
+      font-size:1.3rem;
+      font-weight: bold;
+      position: fixed;
+    }
+ .logo>img{
+	height:9vh;
+	width:12vw;
+	padding: 0px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-area{
+			padding: 20px 0px;
+			margin:20px 0;
+      		display: flex;
+      		justify-content: center;
+      		background: grey;
+      	}
+      	.search-btn{
+      		background:coral;
+      		color:white;
+      		border:none;
+      		padding:0 20px;
+      		border-top-right-radius: 30px;
+      		border-bottom-left-radius: 30px;
+      	}
+      	.search-box{
+      		border:none;
+      		border-radius: 5px;
+      		padding:5px 10px;
+      		width:700px;
+      		display: flex;
+      		justify-content: space-between;
+      		align-items: center;
+      		border-top-left-radius: 30px;
+      		border-bottom-right-radius: 30px;
+      		background: #fff;
+
+      	}
+      	.search-btn:hover{
+      		border:none;
+      		cursor: pointer;
+      		background:blue;
+      		color:#fff;
+
+      	}
+      	.search-input{
+      		border:none;
+      		text-align: center;
+      		font-size: 16px;
+      		letter-spacing: 3px;
+      	}
+
+
+/*maincontent*/
+
+.main-content{
+	display: flex;
+	margin-top: 10vh;
+}
+.content{
+	width: 70%;
+	background:#313131;
+	padding-right: 5px;
+	margin: 10px;
+
+}
+.content>h1{
+	text-align: center;
+	margin-bottom: 10px;
+	color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.trending{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	align-items: center;
+
+
+}
+.trending .card{
+	margin: 10px;
+	border: 1px solid #000;
+	text-align: center;
+	border-radius: 10px;
+	background: grey;
+}
+.trending .card:hover{
+	transition: transform .2s ease-out;
+	transform: translateY(5px);
+	}
+
+
+.trending .card>img{
+	height: 200px;
+	width: 100%;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+.card-text{
+	padding:20px;
+}
+
+.card-text>h3{
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.card-text>button{
+	border-radius: 5px;
+	margin: 5px;
+	width: 100%;
+	padding: 10px;
+	background: coral;
+	color: coral;
+}
+
+
+.about-us{
+	width: 30%;
+	/*background:#313131;*/
+	margin: 10px;
+
+}
+.about-image{
+	height: 300px;
+	background: #fff;
+}
+.about-image>img{
+	height: 300px;
+	width: 100%;
+}
+
+
+.footer{
+	background: #313131;
+	color: #fff;
+	padding: 30px;
+	text-align: center;
+	width: 100%;
 }

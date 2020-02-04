@@ -1,13 +1,15 @@
 import React, {Component} from "react";
+import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 
-class Detail extends Component{
-    render() {
-        return(
-            <div>
-                <h1>This is detail page</h1>
+const Detail = (props) => {
+    // let id=props.key;
+
+    return (
+
+            <div>this is detail
             </div>
-        )
-    }
+
+    );
 }
 
 export default Detail;

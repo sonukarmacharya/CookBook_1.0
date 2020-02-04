@@ -1,62 +1,40 @@
-import React, {useEffect, useState} from 'react';
-import Recipe from "./components/Recipe";
-import './App.css';
-const App = () =>{
-    const APP_ID = "5ee9d0c2";
-    const APP_KEYS="d8b82ede97e7f70d81538a066fa001e4";
+import React, {Component} from 'react';
+import './App.css'
+import Home from './components/Home';
+import Trending from './components/Trending';
+import routes from './AppRoutes';
+import {Link,BrowserRouter, Route, Switch} from "react-router-dom";
+import Detail from "./components/Detail";
+import TopBar from "./Bar/TopBar/TopBar";
+import Aboutus from "./components/Aboutus";
+import Slider from "./Bar/SideBar/Slider";
 
-    const[recipes, setRecipes]= useState([]);
-    const [search, setSearch]= useState("");
-    const [query, setQuery]= useState("chicken");
 
-    useEffect(() =>{
-        getRecipes()
-    },[query]);
-
-    const getRecipes = async ()=> {
-        const response = await fetch(
-            `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEYS}`
-        );
-        const data= await response.json();
-        setRecipes(data.hits);
-        console.log(data.hits);
-
-    };
-
-    const updateSerch = e =>{
-        setSearch(e.target.value);
-    };
-    const getSearch = e =>{
-        e.preventDefault();
-        setQuery(search)
-    }
+class App extends Component{
+    render() {
         return(
-            <div className="App">
-               <form onSubmit={getSearch} className="search-form">
-                   <input
-                       className="search-bar"
-                       type="text"
-                       value={search}
-                       onChange={updateSerch}
-                   />
-                   <button className="search-button" type="submit">
-                       Search
-                   </button>
-               </form>
-                {recipes.map(recipe=>(
-                    <Recipe
-                        key={recipe.recipe.label}
-                        title={recipe.recipe.label}
-                        calories={recipe.recipe.calories}
-                        image={recipe.recipe.image}
-                        ingredients={recipe.recipe.ingredients}
-                    />
-                ))}
-            </div>
+          <div>
+          <TopBar/>
+          <Slider/>
+              <BrowserRouter>
+                <h2>
+                  <Link to={"/home"}> Search Product</Link>
+                </h2>
+                <h2>
+                  <Link to={"/"}> Back</Link>
+                </h2>
+                <Route exact path="/home" component={Home}/>
+                  <Route exact path="/" component={Trending}/>
+                  <Trending/>
+                  <Aboutus/>
+              </BrowserRouter>
+          </div>
         );
-
     }
-
-
-
+}
 export default App;
+{/*<Switch>*/}
+{/*    {routes.map((route,key)=>*/}
+{/*        <Route path={route.path} component={route.component} exact={route.exact}/>*/}
+{/*    )}*/}
+{/*</Switch>*/}
