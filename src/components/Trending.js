@@ -40,7 +40,7 @@ const Trending = () => {
           ))}
         </div>
       </div>
-      <Aboutus />
+      {/* <Aboutus /> */}
     </div>
   );
 };

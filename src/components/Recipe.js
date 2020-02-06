@@ -12,10 +12,12 @@ const Recipe = props => {
           <Link to={"/detail"}>
             <img src={props.image} />
           </Link>
-          <div class="card-text">
-            <h3>{props.title}</h3>
-            <h3>{props.key}</h3>
-            <button>{props.yield}</button>
+          <div class="overlay">
+            <div class="card-text">
+              <h3>{props.title}</h3>
+              {/* <h3>{props.ingredients}</h3> */}
+              {/* <button>{props.yield}</button> */}
+            </div>
           </div>
         </div>
       </div>
