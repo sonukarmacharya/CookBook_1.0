@@ -8,12 +8,17 @@ class Aboutus extends Component {
       <>
         <TopBar />
         <Slider />
-        <div class="about-us">
-          <h1>ABOUT US</h1>
-          <div className="about-image">
-            <img src={logo} alt="logo"></img>
+        <div class="main">
+          <div>
+            <img src={logo} alt="logo" className="logo-about" />
           </div>
-          <p>This is about page</p>
+          <div>
+            <h1 className="text-center col-8 about-text">
+              In this site you can search you favourite dishes and find its
+              recipies as well as calories it take. This can help to know how
+              much calories are we consuming eating those dishes.
+            </h1>
+          </div>
         </div>
       </>
     );
