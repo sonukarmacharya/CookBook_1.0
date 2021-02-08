@@ -28,7 +28,7 @@ const Trending = () => {
     <div class="main">
       <div class="content">
         <h1>TRENDING RECEPIES</h1>
-        <div class="trending">
+        <div class="body">
           {recipes.map(recipe => (
             <Recipe
               yield={recipe.recipe.yield}

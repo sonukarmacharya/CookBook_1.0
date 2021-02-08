@@ -45,16 +45,21 @@ const Home = () => {
           Search
         </button>
       </form>
-      <div className="d-flex">
+      <div className="body d-flex flex-wrap mt-3">
       {recipes.map(recipe => (
-        <Recipe
-          yield={recipe.recipe.yield}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredientLines}
-        />
+        <div className="p-3">
+
+          <Recipe
+            yield={recipe.recipe.yield}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredientLines}
+            healthLabels={recipe.recipe.healthLabels}
+          />
+          </div>
       ))}
+      
       </div>
       
       </div>
