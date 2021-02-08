@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import TopBar from "../Bar/TopBar/TopBar";
+import Slider from "../Bar/SideBar/Slider";
 
 const Home = () => {
   const APP_ID = "5ee9d0c2";
@@ -23,45 +24,43 @@ const Home = () => {
     console.log(data.hits);
   };
 
-  const updateSerch = e => {
+  const updateSerch = (e) => {
     setSearch(e.target.value);
   };
-  const getSearch = e => {
+  const getSearch = (e) => {
     e.preventDefault();
     setQuery(search);
   };
   return (
     <div>
       <TopBar />
+      <Slider />
       <div className="main">
-      <form onSubmit={getSearch} className="search-form  p-3">
-        <input
-          className="search-box"
-          type="text"
-          value={search}
-          onChange={updateSerch}
-        />
-        <button className="search-btn" type="submit">
-          Search
-        </button>
-      </form>
-      <div className="body d-flex flex-wrap mt-3">
-      {recipes.map(recipe => (
-        <div className="p-3">
-
-          <Recipe
-            yield={recipe.recipe.yield}
-            title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
-            image={recipe.recipe.image}
-            ingredients={recipe.recipe.ingredientLines}
-            healthLabels={recipe.recipe.healthLabels}
+        <form onSubmit={getSearch} className="search-form  p-3">
+          <input
+            className="search-box"
+            type="text"
+            value={search}
+            onChange={updateSerch}
           />
-          </div>
-      ))}
-      
-      </div>
-      
+          <button className="search-btn" type="submit">
+            Search
+          </button>
+        </form>
+        <div className="body d-flex flex-wrap mt-3">
+          {recipes.map((recipe) => (
+            <div className="p-3">
+              <Recipe
+                yield={recipe.recipe.yield}
+                title={recipe.recipe.label}
+                calories={recipe.recipe.calories}
+                image={recipe.recipe.image}
+                ingredients={recipe.recipe.ingredientLines}
+                healthLabels={recipe.recipe.healthLabels}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
