@@ -19,12 +19,11 @@ class App extends Component {
           <h2>
             <Link to={"/home"}> Search Product</Link>
           </h2>
-          {/* <h2>
-            <Link to={"/"}> Back</Link>
-          </h2> */}
           <Route exact path="/home" component={Home} />
-          {/* <Route exact path="/" component={Trending} /> */}
-          <Trending />
+          <Route exact path="/" component={Trending} />
+          <Route exact path="/about" component={Aboutus} />
+          <Route exact path="/detail" component={Detail} />
+          
         </BrowserRouter>
       </div>
     );

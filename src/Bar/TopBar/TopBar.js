@@ -7,8 +7,14 @@ class  TopBar extends Component{
         return(
         <div>
             <nav>
-                <div class="logo">
+                <div class="logo d-flex">
                   <img src={logo}/>
+                  <div>
+                  <p>Home</p>
+                  <p>About Us</p>
+                  <p>Detail</p>
+
+                  </div>
                 </div>
               </nav>
         </div>
