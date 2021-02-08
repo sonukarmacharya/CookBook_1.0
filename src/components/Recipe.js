@@ -7,7 +7,7 @@ const Recipe = props => {
 
   return (
     <Router>
-      <div class="trending">
+      <div >
         <div class="card">
           <Link to={"/detail"}>
             <img src={props.image} />

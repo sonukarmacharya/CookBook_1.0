@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 a {
   text-decoration: none;
@@ -23,12 +23,16 @@ a {
   animation: slide 12s linear infinite;
 }
 .slider .slider-text {
-  height: 80vh;
+  position: relative;
+  top:50%;
+  left:38px;
+  font-size: 40px;
+  /* height: 80vh;
   display: flex;
   justify-content: center;
   text-align: left;
   flex-direction: column;
-  z-index: 1;
+  z-index: 1; */
 }
 
 @keyframes slide {
@@ -48,25 +52,20 @@ a {
     background-size: 100%;
   }
 }
-nav {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 15vh;
-}
+
 
 .logo {
-  padding: 3vw;
-  box-sizing: border-box;
-  font-size: 1.3rem;
-  font-weight: bold;
-  position: fixed;
+  position: relative;
+  height:80px;
+  width:90px;
+ padding: 5px;
+  left: 10px;
 }
-.logo > img {
-  height: 9vh;
-  width: 12vw;
+/* .logo > img {
+  height: 10%;
+  width: 10%;
   padding: 0px 10px;
-}
+} */
 
 .search-area {
   padding: 20px 0px;
@@ -83,17 +82,16 @@ nav {
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
 }
-.search-box {
-  border: none;
+.search-box {  
   border-radius: 5px;
-  padding: 5px 10px;
-  width: 700px;
+  padding: 5px 80px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  background: #fff;
+  
 }
 .search-btn:hover {
   border: none;
@@ -217,3 +215,73 @@ nav {
   text-align: center;
   width: 100%;
 }
+/* here */
+h1 {
+  font-size: 1.25em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1em;
+}
+
+img {
+  position: relative;
+  width: 100%;
+}
+
+.image-text {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  color: white;
+}
+
+.image-text hr {
+  background-color: white;
+}
+
+.active {
+  color: green;
+}
+
+.main {
+  position: absolute;
+  padding: 10px;
+  left: 5%;
+  top: 75%;
+  width: 90%;
+  background: white;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.design-image {
+  width: 18%;
+  height: 10%;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.body, .blog-body {
+  border-top: double;
+  padding: 35px 0px 35px 0px;
+}
+
+.blog-body {
+  width: auto;
+}
+
+.pic-slide {
+  float: right;
+}
+
+.blog-image {
+  height: 20%;
+  width: 20%;
+}
+/*# sourceMappingURL=style.css.map */

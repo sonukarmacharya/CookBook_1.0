@@ -5,8 +5,8 @@ class  Slider extends Component{
         return(
         <div class="slider">
               <div class="slider-text">
-                <h1>This is Slider text</h1>
-                <h2>This is small slider text</h2>
+                <h1 className='slider-text'>CookBook</h1>
+                <h2 className='slider-text'>Find Best Recipies Here</h2>
               </div>
         </div>
 

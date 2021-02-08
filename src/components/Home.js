@@ -31,19 +31,21 @@ const Home = () => {
     setQuery(search);
   };
   return (
-    <div className="App">
+    <div>
       <TopBar />
-      <form onSubmit={getSearch} className="search-form">
+      <div className="main">
+      <form onSubmit={getSearch} className="search-form  p-3">
         <input
-          className="search-bar"
+          className="search-box"
           type="text"
           value={search}
           onChange={updateSerch}
         />
-        <button className="search-button" type="submit">
+        <button className="search-btn" type="submit">
           Search
         </button>
       </form>
+      <div className="d-flex">
       {recipes.map(recipe => (
         <Recipe
           yield={recipe.recipe.yield}
@@ -53,6 +55,9 @@ const Home = () => {
           ingredients={recipe.recipe.ingredientLines}
         />
       ))}
+      </div>
+      
+      </div>
     </div>
   );
 };

@@ -25,7 +25,7 @@ const Trending = () => {
     console.log(data.hits);
   };
   return (
-    <div class="main-content">
+    <div class="main">
       <div class="content">
         <h1>TRENDING RECEPIES</h1>
         <div class="trending">

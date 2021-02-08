@@ -16,14 +16,10 @@ class App extends Component {
         <TopBar />
         <Slider />
         <BrowserRouter>
-          <h2>
-            <Link to={"/home"}> Search Product</Link>
-          </h2>
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/" component={Trending} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/trending" component={Trending} />
           <Route exact path="/about" component={Aboutus} />
-          <Route exact path="/detail" component={Detail} />
-          
+          <Route exact path="/detail" component={Detail} />          
         </BrowserRouter>
       </div>
     );
